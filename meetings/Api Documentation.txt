@@ -1,0 +1,34 @@
+1. //Create a Meeting
+
+http://localhost:4000/meetings/createMeeting	#POST
+	>>eg:{
+		 "name":"Jason",
+		"attend_pw":"Abc123",
+		"moderato_pwr":"Abc123",
+		"max_duration":30,
+		"max_participant":50
+
+	     }
+
+2. //Get All Meetings
+
+http://localhost:4000/meetings/getMeeting 	#GET
+
+
+3. //Get Meeting By ID
+
+http://localhost:4000/meetings/getMeetingByID 	#POST
+
+	>>eg:{
+  		 "meeting_id":"d55"
+		}
+
+
+4. //Delete a Meeting
+
+http://localhost:4000/meetings/deleteMeeting 	#DELETE
+	>>eg:{
+  		 "meeting_id":"d55"
+		}
+	    
+        This request will update the is_delete status to  1

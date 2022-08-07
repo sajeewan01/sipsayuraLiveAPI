@@ -1,0 +1,19 @@
+﻿{
+    "database": {
+        "host": "localhost",
+        "port": 3306,
+        "user": "root",
+        "password": "",
+        "database": "sipsayura_live"
+    },
+    "secret": "BGVKKX56465456456FFGDG",
+    "emailFrom": "sipsayura.live",
+    "smtpOptions": {
+        "host": "mail.coderay.lk",
+        "port": 465,
+        "auth": {
+            "user": "contact@coderay.lk",
+            "pass": "HRxyStIZO1U4"
+        }
+    }
+}
