@@ -80,7 +80,7 @@ async function getMeetingByUserId(accounts_id,is_deleted) {
 // }
 
 //Create meeting 
-async function createMeeting(params,res, generatedMeetingId,receivedAttendPassword,receivedModeratorPassword,start_date,start_time,accounts_id) {
+async function createMeeting(params,res, generatedMeetingId,receivedAttendPassword,receivedModeratorPassword,start_date,start_time,accounts_id,actual_duration) {
 
     
 
@@ -99,6 +99,7 @@ async function createMeeting(params,res, generatedMeetingId,receivedAttendPasswo
     // meeting.scheduled_at=`${start_date}' 
     meeting.scheduled_at_Time=`${start_time}`;
     meeting.scheduled_at_Date=`${start_date}`;
+    meeting.max_duration=actual_duration;
     meeting.create_at = Date.now();
     meeting.update_at= Date.now();
     meeting.accounts_id=accounts_id;

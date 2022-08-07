@@ -58,8 +58,8 @@ function getMeetingByUserId(req, res, next) {
 // }
 
 //Create meeting
-function createMeeting(req, res, next, generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time, accounts_id) {
-    meetingService.createMeeting(req.body, req.get('origin'), generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time, accounts_id)
+function createMeeting(req, res, next, generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time,accounts_id, actual_duration) {
+    meetingService.createMeeting(req.body, req.get('origin'), generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time, accounts_id, actual_duration)
         .then(() => res.status(200).json({ status: "Success", message: 'Meeting Created Successfully' }))
         // .then(() => res.json('Meeting Created Successfully'))
         .catch(next);
@@ -155,7 +155,7 @@ function requestMeeting(req, res, next) {
         receivedAttendPassword = jsonData.attendeePW;
         receivedModeratorPassword = jsonData.moderatorPW;
         if (jsonData.returncode == "SUCCESS" && jsonData.messageKey != "duplicateWarning") {
-            createMeeting(req, res, next, generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time, accounts_id);
+            createMeeting(req, res, next, generatedMeetingId, receivedAttendPassword, receivedModeratorPassword, start_date, selected_start_time, accounts_id, actual_duration);
         } else if (jsonData.returncode == "FAILED" || jsonData.messageKey == "duplicateWarning") {
             if (jsonData.messageKey == "idNotUnique") {
                 // res.send("A meeting already exists with that meeting ID. Please use a different meeting ID");

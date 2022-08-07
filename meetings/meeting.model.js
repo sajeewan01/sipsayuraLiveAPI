@@ -7,7 +7,7 @@ function model(sequelize) {
     const attributes = {
         name: { type: DataTypes.STRING, allowNull: true },
         meeting_id: { type: DataTypes.STRING, allowNull: true },
-        max_duration: { type: DataTypes.TIME, allowNull: true },
+        max_duration: { type: DataTypes.INTEGER, allowNull: true },
         is_deleted: { type: DataTypes.TINYINT,allowNull: true },
         welcome: { type: DataTypes.STRING, allowNull: true },
         attend_pw: { type: DataTypes.STRING ,allowNull: true},
